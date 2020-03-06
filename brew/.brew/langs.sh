@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 langs=(
     "python"
     "lua"

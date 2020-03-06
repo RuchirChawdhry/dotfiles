@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 tap=(
     "homebrew/core"
     "homebrew/services"

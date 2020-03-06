@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 casks=(
     "iterm2"
     "marta"

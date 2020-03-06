@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 tools=(
     "dvdbackup"
     "gnu-barcode"
