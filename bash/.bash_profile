@@ -3,6 +3,7 @@
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/opt/X11/bin"
 # --
 
+export CLICOLOR=1
 export MYEDITOR="subl"
 
 # -- ALIAS:

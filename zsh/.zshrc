@@ -1,3 +1,11 @@
+if which pyenv > /dev/null; 
+    then eval "$(pyenv init -)"; 
+fi
+
+if which pyenv-virtualenv-init > /dev/null; 
+    then eval "$(pyenv virtualenv-init -)"; 
+fi
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -177,15 +185,15 @@ alias mem="top -o rsize"
 # export PATH="$HOME/.poetry/bin:$PATH"
 
 # PIP ALIAS
-alias pip upgrade="pip install --upgrade"
+alias pip upgrade="pip3 install --upgrade"
 alias pup="pip3 install --upgrade --no-cache-dir"
 
 
-# Created by `userpath` on 2019-11-05 08:13:57
-# export PATH="$PATH:/Users/ruchir/.local/bin"
 
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+# if which pyenv > /dev/null; 
+#     then eval "$(pyenv init -)"; 
+# fi
 
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+# if which pyenv-virtualenv-init > /dev/null; 
+#     then eval "$(pyenv virtualenv-init -)"; 
+# fi
