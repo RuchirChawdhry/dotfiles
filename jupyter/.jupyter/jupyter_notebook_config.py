@@ -25,7 +25,7 @@
 # c.JupyterApp.answer_yes = False
 
 ## Full path of a config file.
-# c.JupyterApp.config_file = '/Users/ruchir/.jupyter/jupyter_notebook_config.py'
+c.JupyterApp.config_file = "/Users/ruchir/.jupyter/jupyter_notebook_config.py"
 
 ## Specify a config file to load.
 # c.JupyterApp.config_file_name = ''
@@ -201,7 +201,7 @@ c.NotebookApp.disable_check_xsrf = True
 # c.NotebookApp.iopub_msg_rate_limit = 1000
 
 ## The IP address the notebook server will listen on.
-c.NotebookApp.ip = "notebook.localhost"
+c.NotebookApp.ip = "0.0.0.0"
 
 ## Supply extra arguments that will be passed to Jinja environment.
 # c.NotebookApp.jinja_environment_options = {}
@@ -226,7 +226,11 @@ c.NotebookApp.ip = "notebook.localhost"
 #
 #  Local IP addresses (such as 127.0.0.1 and ::1) are automatically accepted as
 #  local as well.
-c.NotebookApp.local_hostnames = ["localhost", "notebook.localhost"]
+c.NotebookApp.local_hostnames = [
+    "localhost",
+    "notebook.localhost",
+    "127.0.0.1",
+]
 
 ## The login handler class to use.
 # c.NotebookApp.login_handler_class = 'notebook.auth.login.LoginHandler'

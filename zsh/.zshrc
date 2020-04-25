@@ -1,56 +1,31 @@
-if which pyenv > /dev/null; 
-    then eval "$(pyenv init -)"; 
-fi
 
-if which pyenv-virtualenv-init > /dev/null; 
-    then eval "$(pyenv virtualenv-init -)"; 
-fi
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 # source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
-
-POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
-
-# POWERLEVEL9K_DIR_PATH_SEPARATOR=$'\ue0c1  '
-# POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\ue0c0 '
-# POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\ue0c2 '
-
-
-
-POWERLEVEL9K_MODE='nerdfont-complete'
-
 
 export DEFAULT_USER=$USER
 
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs command_execution_time status root_indicator virtualenv swap time)
+POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
+POWERLEVEL9K_TIME_ICON=""
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_HOME_ICON=''
+POWERLEVEL9K_HOME_SUB_ICON=''
+POWERLEVEL9K_FOLDER_ICON=''
+POWERLEVEL9K_SWAP_ICON=""
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time root_indicator virtualenv swap time)
 POWERLEVEL9K_DISABLE_RPROMPT=false
-
 POWERLEVEL9K_RAM_ELEMENTS=(ram_free)
-
-
 
 ZSH_THEME=powerlevel10k/powerlevel10k
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-
 # -- PATH --
-# export PATH="/usr/local/bin:/usr/local/opt:/usr/local/opt/ruby/bin:/usr/local/opt/gnu-which/libexec/gnubin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/grep/libexec/gnubin:/usr/local/opt/gnu-time/libexec/gnubin:/usr/local/opt/curl/bin:/usr/local/opt/mozjpeg/bin:/usr/local/sbin:/usr/local/MacGPG2/bin:/opt/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin"
-
 export PATH="$HOME/.poetry/bin:/usr/local/opt/coreutils/bin:/usr/local/bin:/usr/local/opt/gnu-tar/bin:/usr/local/opt/coreutils/bin:/usr/local/opt/gnu-which/bin:/usr/local/sbin:/usr/local/MacGPG2/bin:/opt/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin"
-
-# export PYTHONPATH="/usr/local/Cellar/python/3.7.4/bin/python3"
-
-
-# -- PYTHON PATH --
-# export PATH="/Users/ruchir/.pyenv/shims:$PATH"
-# export PATH="/usr/local/bin/python3:$PATH"
 
 
 # -- RUBY PATH -- 
@@ -125,6 +100,7 @@ alias prefs="open /Applications/System\ Preferences.app"
 alias restartdnsmasq="sudo launchctl stop homebrew.mxcl.dnsmasq && sudo launchctl start homebrew.mxcl.dnsmasq"
 alias smartmontools="smartctl -h"
 alias smart="smartctl -a disk0t"
+alias archiveis="archiveis -ua 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'"
 
 
 # --- ALIAS: YOUTUBE-DL ---
@@ -189,6 +165,13 @@ alias pip upgrade="pip3 install --upgrade"
 alias pup="pip3 install --upgrade --no-cache-dir"
 
 
+if which pyenv > /dev/null; 
+    then eval "$(pyenv init -)"; 
+fi
+
+if which pyenv-virtualenv-init > /dev/null; 
+    then eval "$(pyenv virtualenv-init -)"; 
+fi
 
 # if which pyenv > /dev/null; 
 #     then eval "$(pyenv init -)"; 
@@ -197,3 +180,5 @@ alias pup="pip3 install --upgrade --no-cache-dir"
 # if which pyenv-virtualenv-init > /dev/null; 
 #     then eval "$(pyenv virtualenv-init -)"; 
 # fi
+# 
+eval $(thefuck --alias)
