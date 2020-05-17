@@ -1,6 +1,6 @@
+# Prezto
+# ------
 
-
-# Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
@@ -8,6 +8,11 @@ fi
 # source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
 
 export DEFAULT_USER=$USER
+export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
+
+
+# Theme
+# -----
 
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
 POWERLEVEL9K_TIME_ICON=""
@@ -24,8 +29,10 @@ POWERLEVEL9K_RAM_ELEMENTS=(ram_free)
 ZSH_THEME=powerlevel10k/powerlevel10k
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-# -- PATH --
-export PATH="$HOME/.poetry/bin:/usr/local/opt/coreutils/bin:/usr/local/bin:/usr/local/opt/gnu-tar/bin:/usr/local/opt/coreutils/bin:/usr/local/opt/gnu-which/bin:/usr/local/sbin:/usr/local/MacGPG2/bin:/opt/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin"
+# Path
+# ----
+
+export PATH="/usr/local/bin:/usr/local/opt/coreutils/bin:/usr/local/opt/gnu-tar/bin:/usr/local/opt/gnu-which/bin:/usr/local/sbin:/usr/local/MacGPG2/bin:/opt/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin"
 
 
 # -- RUBY PATH -- 
@@ -70,7 +77,9 @@ export PATH="$HOME/.poetry/bin:/usr/local/opt/coreutils/bin:/usr/local/bin:/usr/
 # --- PATH: GNU ---
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-# -- ALIAS -- 
+# Aliases
+# -------
+ 
 alias clr="clear"
 # alias myip="curl icanhazip.com"
 alias ll="ls -al"
@@ -91,23 +100,16 @@ alias ls="exa --all"
 alias lst="exa --tree -L2"
 alias lsd="exa -l -h -a"
 alias tf="thefuck"
-alias djmm="python manage.py makemigrations"
-alias djm="python manage.py migrate"
-alias djr="python manage.py runserver"
-alias djrun="python manage.py runserver"
 alias wifi="wifi-password"
 alias prefs="open /Applications/System\ Preferences.app"
 alias restartdnsmasq="sudo launchctl stop homebrew.mxcl.dnsmasq && sudo launchctl start homebrew.mxcl.dnsmasq"
 alias smartmontools="smartctl -h"
 alias smart="smartctl -a disk0t"
-alias archiveis="archiveis -ua 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'"
+alias archiveis="archiveis -ua 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'"
 
+# Aliases: Git
+# ------------
 
-# --- ALIAS: YOUTUBE-DL ---
-alias yt-mp3="youtube-dl --extract-audio --audio-format mp3 "
-# alias yt-playlist='youtube-dl -o "./%(playlist_title)s/%(playlist_index)s_%(title)s.%(ext)s" '
-
-# --- ALIAS: GIT ---
 alias g="git"
 alias gadd="git add -A ."
 alias gcommit="git commit -m"
@@ -119,7 +121,29 @@ alias gpush="git push"
 alias gpsh="git push"
 alias gs="git status"
 
-export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
+
+# Aliases: Python
+# ---------------
+
+alias pip upgrade="pip3 install --upgrade"
+alias pup="pip3 install --upgrade --no-cache-dir"
+
+
+# Aliases: Django
+# ---------------
+
+alias djmm="python manage.py makemigrations"
+alias djm="python manage.py migrate"
+alias djr="python manage.py runserver"
+alias djrun="python manage.py runserver"
+
+
+# Aliases: Downloads
+# ------------------
+
+alias yt-mp3="youtube-dl --extract-audio --audio-format mp3 "
+# alias yt-playlist='youtube-dl -o "./%(playlist_title)s/%(playlist_index)s_%(title)s.%(ext)s" '
+
 
 # --- ALIAS: QUICK OPEN ---
 alias sub="sublime"
@@ -127,7 +151,10 @@ alias bashprofile="open ~/.bash_profile"
 alias zshprofile="open ~/.zshrc"
 alias hosts="open /etc/hosts"
 
-# --- ALIAS: SYSTEM INFO ---
+
+# Aliases: System
+# ---------------
+
 alias cpu="top -o cpu"
 alias mem="top -o rsize"
 
@@ -142,27 +169,9 @@ alias mem="top -o rsize"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
-#        . "/usr/local/anaconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/usr/local/anaconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-# <<< conda initialize <<<
-
 # export PATH="/usr/local/opt/ruby/bin:$PATH"
 # export PATH="$HOME/.poetry/bin:$PATH"
 
-# PIP ALIAS
-alias pip upgrade="pip3 install --upgrade"
-alias pup="pip3 install --upgrade --no-cache-dir"
 
 
 if which pyenv > /dev/null; 
@@ -173,12 +182,4 @@ if which pyenv-virtualenv-init > /dev/null;
     then eval "$(pyenv virtualenv-init -)"; 
 fi
 
-# if which pyenv > /dev/null; 
-#     then eval "$(pyenv init -)"; 
-# fi
-
-# if which pyenv-virtualenv-init > /dev/null; 
-#     then eval "$(pyenv virtualenv-init -)"; 
-# fi
-# 
 eval $(thefuck --alias)
