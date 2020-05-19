@@ -1,3 +1,14 @@
+#
+# Initializes Prezto.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+#
+# Version Check
+#
+
 # Check for the minimum supported version.
 min_zsh_version='4.3.11'
 if ! autoload -Uz is-at-least || ! is-at-least "$min_zsh_version"; then
@@ -33,7 +44,7 @@ function zprezto-update {
         printf "There is an update available. Trying to pull.\n\n"
         if git pull --ff-only; then
           printf "Syncing submodules\n"
-          git submodule update --recursive
+          git submodule update --init --recursive
           return $?
         else
           cannot-fast-forward
@@ -87,18 +98,20 @@ function pmodload {
     else
       locations=(${pmodule_dirs:+${^pmodule_dirs}/$pmodule(-/FN)})
       if (( ${#locations} > 1 )); then
-        print "$0: conflicting module locations: $locations"
-        continue
+        if ! zstyle -t ':prezto:load' pmodule-allow-overrides 'yes'; then
+          print "$0: conflicting module locations: $locations"
+          continue
+        fi
       elif (( ${#locations} < 1 )); then
         print "$0: no such module: $pmodule"
         continue
       fi
 
       # Grab the full path to this module
-      pmodule_location=${locations[1]}
+      pmodule_location=${locations[-1]}
 
       # Add functions to $fpath.
-      fpath=(${pmodule_location}/functions(/FN) $fpath)
+      fpath=(${pmodule_location}/functions(-/FN) $fpath)
 
       function {
         local pfunction
