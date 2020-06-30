@@ -1,0 +1,19 @@
+# formulas
+
+brew "htop"
+brew "python"
+brew "tldr"
+brew "jq"
+brew "ncdu"
+brew "tmux"
+brew "readline"
+brew "xz"
+brew "sqlite"
+brew "imagemagick"
+brew "libyaml"
+brew "x265"
+brew "ffmpeg"
+brew "x264"
+brew "c-ares"
+brew "curl"
+
