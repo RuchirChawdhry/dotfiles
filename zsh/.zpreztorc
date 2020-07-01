@@ -61,7 +61,7 @@ zstyle ':prezto:module:autosuggestions:color' found ''
 # ------
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'emacs'
+zstyle ':prezto:module:editor' key-bindings 'vi'
 
 # Auto convert .... to ../..
 zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -108,8 +108,6 @@ zstyle ':prezto:module:osx:man' dash-keyword 'manpages'
 # ------
 
 # Set the prompt theme to load.
-# Auto set to 'off' on dumb terminals.
-# zstyle ':prezto:module:prompt' theme 'powerlevel9k'
 zstyle ':prezto:module:prompt' theme 'powerlevel10k'
 
 # Set the working directory prompt display length.

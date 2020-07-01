@@ -46,11 +46,11 @@ fi
   # automatically hidden when the input line reaches it. Right prompt above the
   # last prompt line gets hidden if it would overlap with left prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-      status                  # exit code of the last command
+      # status                  # exit code of the last command
       command_execution_time  # duration of the last command
-      background_jobs         # presence of background jobs
+      # background_jobs         # presence of background jobs
       virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
-      anaconda                # conda environment (https://conda.io/)
+      # anaconda                # conda environment (https://conda.io/)
       pyenv                   # python environment (https://github.com/pyenv/pyenv)
       nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
       nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
@@ -58,12 +58,11 @@ fi
       # node_version          # node.js version
       # go_version            # golang version
       # rbenv                 # ruby version from rbenv (https://github.com/rbenv/rbenv)
-      kubecontext             # current kubernetes context (https://kubernetes.io/)
-      context                 # user@host
-      # nordvpn               # nordvpn connection status, linux only (https://nordvpn.com/)
+      # kubecontext             # current kubernetes context (https://kubernetes.io/)
+      # context                 # user@host
       # public_ip             # public IP address
       # battery               # internal battery
-      # time                  # current time
+      time                  # current time
       # example               # example user-defined segment (see prompt_example function below)
   )
 
@@ -124,10 +123,10 @@ fi
   # Or for a specific segment in specific state:
   #
   #   POWERLEVEL9K_DIR_NOT_WRITABLE_ICON_BEFORE_CONTENT=false
-  typeset -g POWERLEVEL9K_ICON_BEFORE_CONTENT=
+  # typeset -g POWERLEVEL9K_STATUS_ICON_BEFORE_CONTENT=false
 
   # Add an empty line before each prompt.
-  typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
+  typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
   # Connect left prompt lines with these symbols. You'll probably want to use the same color
   # as POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND below.
@@ -156,7 +155,7 @@ fi
   fi
 
   # Default background color.
-  typeset -g POWERLEVEL9K_BACKGROUND=238
+  typeset -g POWERLEVEL9K_BACKGROUND=255
 
   # Separator between same-color segments on the left.
   typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='%246F\uE0B1'
@@ -613,7 +612,7 @@ fi
   # behavior where they contain the end times of their preceding commands.
   typeset -g POWERLEVEL9K_TIME_UPDATE_ON_COMMAND=false
   # Custom icon.
-  typeset -g POWERLEVEL9K_TIME_VISUAL_IDENTIFIER_EXPANSION=
+  # typeset -g POWERLEVEL9K_TIME_VISUAL_IDENTIFIER_EXPANSION=
   # Custom prefix.
   # typeset -g POWERLEVEL9K_TIME_PREFIX='%248Fat '
 

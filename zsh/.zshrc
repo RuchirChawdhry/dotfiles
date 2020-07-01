@@ -1,3 +1,8 @@
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
 # Prezto
 # ------
 
@@ -5,15 +10,15 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+
+
 export DEFAULT_USER=$USER
 export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
 
 
 # Theme
 # -----
-
-# # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
 POWERLEVEL9K_TIME_ICON=""
@@ -35,7 +40,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # ----
 
 export PATH="/usr/local/bin:/usr/local/opt/coreutils/bin:/usr/local/opt/gnu-tar/bin:/usr/local/opt/gnu-which/bin:/usr/local/sbin:/usr/local/MacGPG2/bin:/opt/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin"
-
+export PYTHONPATH="~/.pyenv/shims/python3"
 
 # Manpath
 # -------
@@ -93,7 +98,7 @@ alias lst="exa --tree -L2"
 alias lsd="exa -l -h -a"
 alias tf="thefuck"
 alias restartdnsmasq="sudo launchctl stop homebrew.mxcl.dnsmasq && sudo launchctl start homebrew.mxcl.dnsmasq"
-alias archiveis="archiveis -ua 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'"
+alias archiveis="archiveis -ua 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16C101'"
 
 # Aliases: Git
 # ------------
@@ -118,10 +123,10 @@ alias pup="pip3 install --upgrade --no-cache-dir"
 # Aliases: Django
 # ---------------
 
-alias djmm="python manage.py makemigrations"
-alias djm="python manage.py migrate"
-alias djr="python manage.py runserver"
-alias djrun="python manage.py runserver"
+alias djmm="python3 manage.py makemigrations"
+alias djm="python3 manage.py migrate"
+alias djr="python3 manage.py runserver"
+alias djrun="python3 manage.py runserver"
 
 # Aliases: Downloads
 # ------------------
@@ -173,3 +178,6 @@ if which pyenv-virtualenv-init > /dev/null;
 fi
 
 eval $(thefuck --alias)
+
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
