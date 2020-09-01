@@ -7,3 +7,4 @@ My config files for macOS Mojave...
 - jupyter-notebook
 - karabiner
 - prettier
+- aria2
