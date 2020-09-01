@@ -1,4 +1,4 @@
 aria2/.aria2/aria2.log
 .DS_Store
 bash/.bash_history
-zsh/.zprezto
+zsh/.zprezto/*
