@@ -1,9 +1,5 @@
-#
-# Executes commands at login post-zshrc.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# Executes Commands at Login (post-zshrc)
+# ---------------------------------------
 
 # Execute code that does not affect the current session in the background.
 {
