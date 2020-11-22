@@ -13,9 +13,12 @@ jobs:
         with:
           filename: 'release.zip'
           exclusions: '.git* .github* LICENSE README.md .gitignore'
+        run: |
+          mkdir -p releases
+          cp release.zip releases/
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           REPO_OWNER: RuchirChawdhry
-          SOURCE: './release.zip'
+          SOURCE: ./releases
