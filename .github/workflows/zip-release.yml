@@ -11,11 +11,11 @@ jobs:
       - name: Archive Release
         uses: TheDoctor0/zip-release@0.4.1
         with:
-          filename: 'releases.zip'
-          path: './releases'
+          filename: 'release.zip'
           exclusions: '.git* .github* LICENSE README.md .gitignore'
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           REPO_OWNER: RuchirChawdhry
+          SOURCE: './release.zip'
