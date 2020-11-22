@@ -17,6 +17,7 @@ jobs:
         run: |
           mkdir -p releases
           cp release.zip releases/
+          cd releases
           ls -la
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@master
