@@ -24,4 +24,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           REPO_OWNER: RuchirChawdhry
-          SOURCE: './releases'
