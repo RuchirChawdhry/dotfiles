@@ -12,7 +12,7 @@ jobs:
         uses: TheDoctor0/zip-release@0.4.1
         with:
           filename: 'release.zip'
-          exclusions: '.git* .github* LICENSE README.md .gitignore'
+          exclusions: '*.git* *.github* LICENSE README.md'
       - name: Create Releases Dir
         run: |
           mkdir -p releases
@@ -24,4 +24,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           REPO_OWNER: RuchirChawdhry
-          SOURCE: ./releases
+          SOURCE: './releases'
