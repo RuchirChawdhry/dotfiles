@@ -11,7 +11,8 @@ jobs:
       - name: Archive Release
         uses: TheDoctor0/zip-release@0.4.1
         with:
-          filename: 'dotfiles.zip'
+          filename: 'releases.zip'
+          path: './releases'
           exclusions: '.git* .github* LICENSE README.md .gitignore'
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@master
