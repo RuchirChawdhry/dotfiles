@@ -10,3 +10,8 @@ jobs:
         with:
           filename: 'dotfiles.zip'
           exclusions: '*.git*'
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          REPO_OWNER: RuchirChawdhry
