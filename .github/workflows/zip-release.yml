@@ -9,7 +9,7 @@ jobs:
         uses: TheDoctor0/zip-release@0.4.1
         with:
           filename: 'dotfiles.zip'
-          exclusions: '*.git*'
+          exclusions: '.git .github LICENSE README.md .gitignore'
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@master
         env:
