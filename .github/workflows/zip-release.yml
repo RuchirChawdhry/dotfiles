@@ -13,6 +13,7 @@ jobs:
         with:
           filename: 'release.zip'
           exclusions: '.git* .github* LICENSE README.md .gitignore'
+      - name: Create Releases Dir
         run: |
           mkdir -p releases
           cp release.zip releases/
